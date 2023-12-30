@@ -11,7 +11,7 @@ class GP4_API UGP4_MainSaveGame : public USaveGame
 	GENERATED_BODY()
 
 public:
-
+	// Properties to save
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	FString SaveGameName;
 
@@ -23,7 +23,8 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	int RoomIndex = 0;
-	
+
+	// Init a new slot with given name
 	void CreateSlot(const FString& SlotName)
 	{
 		SaveGameName = SlotName;

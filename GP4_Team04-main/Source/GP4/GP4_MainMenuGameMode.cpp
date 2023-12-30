@@ -1,8 +1,8 @@
-
 #include "GP4_MainMenuGameMode.h"
-
 #include "GP4_GameInstance.h"
 #include "Kismet/GameplayStatics.h"
+
+// Impl in main menu widget
 
 void AGP4_MainMenuGameMode::BeginPlay()
 {
@@ -13,11 +13,11 @@ void AGP4_MainMenuGameMode::BeginPlay()
 	if (GameInstance != nullptr)
 	{
 		bool bIsNewGame = GameInstance->IsNewGame();
-
+		// Widget layout wether its a new game or if theres a save
 		OnShowMainMenu(bIsNewGame);
 	}
 }
-
+// Start a new game
 void AGP4_MainMenuGameMode::OnNewGame_Implementation(FName MapNameToLoad)
 {
 	if (GameInstance == nullptr) return;
@@ -28,7 +28,7 @@ void AGP4_MainMenuGameMode::OnNewGame_Implementation(FName MapNameToLoad)
 		//UGameplayStatics::LoadStreamLevel(GetWorld(), MapNameToLoad, true, false, LatentInfo);
 	}
 }
-
+// Load a saved game
 void AGP4_MainMenuGameMode::OnLoadGame_Implementation(FName MapNameToLoad)
 {
 	FLatentActionInfo LatentInfo;

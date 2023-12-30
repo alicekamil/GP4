@@ -1,7 +1,7 @@
-
 #include "GP4_GameInstance.h"
-
 #include "Kismet/GameplayStatics.h"
+
+// Responsible for saving and loading data
 
 const FString UGP4_GameInstance::UNIQUE_SAVE_SLOT = "SaveData_0";
 
